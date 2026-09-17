@@ -1,0 +1,13 @@
+datamend:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../data/datamend.duckdb"
+      threads: 4
+      schema: main
+    sandbox:
+      type: duckdb
+      path: "../data/sandbox.duckdb"
+      threads: 4
+      schema: main
