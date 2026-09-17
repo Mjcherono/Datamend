@@ -1,0 +1,52 @@
+version: 2
+
+# Blast radius is read from these. When a model is found to be wrong, Datamend
+# walks the manifest to the exposures downstream of it and reports what the bad
+# number was actually feeding, rather than naming a table nobody recognises.
+exposures:
+  - name: board_revenue_pack
+    label: Board Revenue Pack
+    type: dashboard
+    maturity: high
+    url: https://bi.internal/dashboards/board-revenue-pack
+    description: Monthly revenue pack circulated to the board. Highest consequence consumer.
+    depends_on:
+      - ref('agg_revenue_by_region')
+      - ref('agg_daily_revenue')
+    owner:
+      name: Finance
+      email: finance@example.ie
+
+  - name: regional_performance
+    label: Regional Performance Dashboard
+    type: dashboard
+    maturity: high
+    url: https://bi.internal/dashboards/regional-performance
+    description: Regional revenue and order mix, reviewed weekly by commercial leads.
+    depends_on:
+      - ref('agg_revenue_by_region')
+    owner:
+      name: Commercial
+      email: commercial@example.ie
+
+  - name: segment_margin_model
+    label: Segment Margin Model
+    type: analysis
+    maturity: medium
+    description: Consumer versus business margin model feeding pricing decisions.
+    depends_on:
+      - ref('agg_revenue_by_segment')
+    owner:
+      name: Pricing
+      email: pricing@example.ie
+
+  - name: revenue_assurance_feed
+    label: Revenue Assurance Feed
+    type: application
+    maturity: high
+    description: Nightly extract into the revenue assurance platform.
+    depends_on:
+      - ref('fct_order_items')
+    owner:
+      name: Revenue Assurance
+      email: ra@example.ie

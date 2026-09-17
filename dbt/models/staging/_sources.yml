@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Landing tables loaded ahead of any transformation.
+    schema: raw
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: regions

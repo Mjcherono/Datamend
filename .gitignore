@@ -1,0 +1,36 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+profiles.yml
+!dbt/profiles.yml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# dbt
+target/
+dbt_packages/
+logs/
+.user.yml
+
+# DuckDB
+*.duckdb
+*.duckdb.wal
+*.db
+data/*.parquet
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
