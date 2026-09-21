@@ -1,0 +1,461 @@
+{
+  "captured_at": "2026-09-18T17:05:02+00:00",
+  "git_sha": "fc0e187",
+  "note": "clean build, seed 20261002",
+  "probe_values": {
+    "probes": {
+      "main_marts.agg_daily_revenue::distinct::order_date": {
+        "column": "order_date",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_marts.agg_daily_revenue"
+      },
+      "main_marts.agg_daily_revenue::null_rate::gross_revenue": {
+        "column": "gross_revenue",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_daily_revenue"
+      },
+      "main_marts.agg_daily_revenue::null_rate::order_date": {
+        "column": "order_date",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_daily_revenue"
+      },
+      "main_marts.agg_daily_revenue::null_rate::orders": {
+        "column": "orders",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_daily_revenue"
+      },
+      "main_marts.agg_daily_revenue::recon::gross_revenue": {
+        "column": null,
+        "expression": "sum(gross_revenue)",
+        "kind": "reconciliation",
+        "relation": "main_marts.agg_daily_revenue"
+      },
+      "main_marts.agg_daily_revenue::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_marts.agg_daily_revenue"
+      },
+      "main_marts.agg_revenue_by_region::distinct::region_code": {
+        "column": "region_code",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_marts.agg_revenue_by_region"
+      },
+      "main_marts.agg_revenue_by_region::null_rate::gross_revenue": {
+        "column": "gross_revenue",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_region"
+      },
+      "main_marts.agg_revenue_by_region::null_rate::order_lines": {
+        "column": "order_lines",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_region"
+      },
+      "main_marts.agg_revenue_by_region::null_rate::orders": {
+        "column": "orders",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_region"
+      },
+      "main_marts.agg_revenue_by_region::null_rate::region_code": {
+        "column": "region_code",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_region"
+      },
+      "main_marts.agg_revenue_by_region::null_rate::region_name": {
+        "column": "region_name",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_region"
+      },
+      "main_marts.agg_revenue_by_region::recon::gross_revenue": {
+        "column": null,
+        "expression": "sum(gross_revenue)",
+        "kind": "reconciliation",
+        "relation": "main_marts.agg_revenue_by_region"
+      },
+      "main_marts.agg_revenue_by_region::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_marts.agg_revenue_by_region"
+      },
+      "main_marts.agg_revenue_by_segment::distinct::segment": {
+        "column": "segment",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_marts.agg_revenue_by_segment"
+      },
+      "main_marts.agg_revenue_by_segment::null_rate::customers": {
+        "column": "customers",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_segment"
+      },
+      "main_marts.agg_revenue_by_segment::null_rate::gross_revenue": {
+        "column": "gross_revenue",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_segment"
+      },
+      "main_marts.agg_revenue_by_segment::null_rate::orders": {
+        "column": "orders",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_segment"
+      },
+      "main_marts.agg_revenue_by_segment::null_rate::segment": {
+        "column": "segment",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_revenue_by_segment"
+      },
+      "main_marts.agg_revenue_by_segment::recon::gross_revenue": {
+        "column": null,
+        "expression": "sum(gross_revenue)",
+        "kind": "reconciliation",
+        "relation": "main_marts.agg_revenue_by_segment"
+      },
+      "main_marts.agg_revenue_by_segment::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_marts.agg_revenue_by_segment"
+      },
+      "main_marts.fct_order_items::distinct::order_item_id": {
+        "column": "order_item_id",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::channel": {
+        "column": "channel",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::customer_id": {
+        "column": "customer_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::line_amount": {
+        "column": "line_amount",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::order_date": {
+        "column": "order_date",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::order_id": {
+        "column": "order_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::order_item_id": {
+        "column": "order_item_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::order_ref": {
+        "column": "order_ref",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::order_status": {
+        "column": "order_status",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::quantity": {
+        "column": "quantity",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::region_code": {
+        "column": "region_code",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::region_name": {
+        "column": "region_name",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::segment": {
+        "column": "segment",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::sku": {
+        "column": "sku",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::null_rate::unit_price": {
+        "column": "unit_price",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::recon::gross_revenue_complete": {
+        "column": null,
+        "expression": "sum(line_amount) filter (where order_status = 'complete')",
+        "kind": "reconciliation",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::recon::orders_complete": {
+        "column": null,
+        "expression": "count(distinct order_id) filter (where order_status = 'complete')",
+        "kind": "reconciliation",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_marts.fct_order_items::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_marts.fct_order_items"
+      },
+      "main_staging.stg_customers::distinct::customer_id": {
+        "column": "customer_id",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_staging.stg_customers"
+      },
+      "main_staging.stg_customers::null_rate::customer_id": {
+        "column": "customer_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_customers"
+      },
+      "main_staging.stg_customers::null_rate::customer_ref": {
+        "column": "customer_ref",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_customers"
+      },
+      "main_staging.stg_customers::null_rate::region_code": {
+        "column": "region_code",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_customers"
+      },
+      "main_staging.stg_customers::null_rate::segment": {
+        "column": "segment",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_customers"
+      },
+      "main_staging.stg_customers::null_rate::signup_date": {
+        "column": "signup_date",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_customers"
+      },
+      "main_staging.stg_customers::null_rate::status": {
+        "column": "status",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_customers"
+      },
+      "main_staging.stg_customers::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_staging.stg_customers"
+      },
+      "main_staging.stg_order_items::distinct::order_item_id": {
+        "column": "order_item_id",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_order_items::null_rate::line_amount": {
+        "column": "line_amount",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_order_items::null_rate::order_id": {
+        "column": "order_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_order_items::null_rate::order_item_id": {
+        "column": "order_item_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_order_items::null_rate::quantity": {
+        "column": "quantity",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_order_items::null_rate::sku": {
+        "column": "sku",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_order_items::null_rate::unit_price": {
+        "column": "unit_price",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_order_items::recon::gross_line_amount": {
+        "column": null,
+        "expression": "sum(line_amount)",
+        "kind": "reconciliation",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_order_items::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_staging.stg_order_items"
+      },
+      "main_staging.stg_orders::distinct::order_id": {
+        "column": "order_id",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_staging.stg_orders"
+      },
+      "main_staging.stg_orders::null_rate::channel": {
+        "column": "channel",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_orders"
+      },
+      "main_staging.stg_orders::null_rate::customer_id": {
+        "column": "customer_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_orders"
+      },
+      "main_staging.stg_orders::null_rate::order_date": {
+        "column": "order_date",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_orders"
+      },
+      "main_staging.stg_orders::null_rate::order_id": {
+        "column": "order_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_orders"
+      },
+      "main_staging.stg_orders::null_rate::order_ref": {
+        "column": "order_ref",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_orders"
+      },
+      "main_staging.stg_orders::null_rate::status": {
+        "column": "status",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_staging.stg_orders"
+      },
+      "main_staging.stg_orders::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_staging.stg_orders"
+      }
+    },
+    "values": {
+      "main_marts.agg_daily_revenue::distinct::order_date": 365.0,
+      "main_marts.agg_daily_revenue::null_rate::gross_revenue": 0.0,
+      "main_marts.agg_daily_revenue::null_rate::order_date": 0.0,
+      "main_marts.agg_daily_revenue::null_rate::orders": 0.0,
+      "main_marts.agg_daily_revenue::recon::gross_revenue": 12651728.55,
+      "main_marts.agg_daily_revenue::row_count": 365.0,
+      "main_marts.agg_revenue_by_region::distinct::region_code": 4.0,
+      "main_marts.agg_revenue_by_region::null_rate::gross_revenue": 0.0,
+      "main_marts.agg_revenue_by_region::null_rate::order_lines": 0.0,
+      "main_marts.agg_revenue_by_region::null_rate::orders": 0.0,
+      "main_marts.agg_revenue_by_region::null_rate::region_code": 0.0,
+      "main_marts.agg_revenue_by_region::null_rate::region_name": 0.0,
+      "main_marts.agg_revenue_by_region::recon::gross_revenue": 12651728.55,
+      "main_marts.agg_revenue_by_region::row_count": 4.0,
+      "main_marts.agg_revenue_by_segment::distinct::segment": 2.0,
+      "main_marts.agg_revenue_by_segment::null_rate::customers": 0.0,
+      "main_marts.agg_revenue_by_segment::null_rate::gross_revenue": 0.0,
+      "main_marts.agg_revenue_by_segment::null_rate::orders": 0.0,
+      "main_marts.agg_revenue_by_segment::null_rate::segment": 0.0,
+      "main_marts.agg_revenue_by_segment::recon::gross_revenue": 12651728.55,
+      "main_marts.agg_revenue_by_segment::row_count": 2.0,
+      "main_marts.fct_order_items::distinct::order_item_id": 227781.0,
+      "main_marts.fct_order_items::null_rate::channel": 0.0,
+      "main_marts.fct_order_items::null_rate::customer_id": 0.0,
+      "main_marts.fct_order_items::null_rate::line_amount": 0.0,
+      "main_marts.fct_order_items::null_rate::order_date": 0.0,
+      "main_marts.fct_order_items::null_rate::order_id": 0.0,
+      "main_marts.fct_order_items::null_rate::order_item_id": 0.0,
+      "main_marts.fct_order_items::null_rate::order_ref": 0.0,
+      "main_marts.fct_order_items::null_rate::order_status": 0.0,
+      "main_marts.fct_order_items::null_rate::quantity": 0.0,
+      "main_marts.fct_order_items::null_rate::region_code": 0.0,
+      "main_marts.fct_order_items::null_rate::region_name": 0.0,
+      "main_marts.fct_order_items::null_rate::segment": 0.0,
+      "main_marts.fct_order_items::null_rate::sku": 0.0,
+      "main_marts.fct_order_items::null_rate::unit_price": 0.0,
+      "main_marts.fct_order_items::recon::gross_revenue_complete": 12651728.55,
+      "main_marts.fct_order_items::recon::orders_complete": 97491.0,
+      "main_marts.fct_order_items::row_count": 227781.0,
+      "main_staging.stg_customers::distinct::customer_id": 20000.0,
+      "main_staging.stg_customers::null_rate::customer_id": 0.0,
+      "main_staging.stg_customers::null_rate::customer_ref": 0.0,
+      "main_staging.stg_customers::null_rate::region_code": 0.0,
+      "main_staging.stg_customers::null_rate::segment": 0.0,
+      "main_staging.stg_customers::null_rate::signup_date": 0.0,
+      "main_staging.stg_customers::null_rate::status": 0.0,
+      "main_staging.stg_customers::row_count": 20000.0,
+      "main_staging.stg_order_items::distinct::order_item_id": 227781.0,
+      "main_staging.stg_order_items::null_rate::line_amount": 0.0,
+      "main_staging.stg_order_items::null_rate::order_id": 0.0,
+      "main_staging.stg_order_items::null_rate::order_item_id": 0.0,
+      "main_staging.stg_order_items::null_rate::quantity": 0.0,
+      "main_staging.stg_order_items::null_rate::sku": 0.0,
+      "main_staging.stg_order_items::null_rate::unit_price": 0.0,
+      "main_staging.stg_order_items::recon::gross_line_amount": 16856517.0,
+      "main_staging.stg_order_items::row_count": 227781.0,
+      "main_staging.stg_orders::distinct::order_id": 130000.0,
+      "main_staging.stg_orders::null_rate::channel": 0.0,
+      "main_staging.stg_orders::null_rate::customer_id": 0.0,
+      "main_staging.stg_orders::null_rate::order_date": 0.0,
+      "main_staging.stg_orders::null_rate::order_id": 0.0,
+      "main_staging.stg_orders::null_rate::order_ref": 0.0,
+      "main_staging.stg_orders::null_rate::status": 0.0,
+      "main_staging.stg_orders::row_count": 130000.0
+    }
+  },
+  "snapshot": null,
+  "version": 1
+}

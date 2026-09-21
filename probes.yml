@@ -1,0 +1,43 @@
+# What Datamend measures on every run, diffed against last known-good.
+#
+# Row counts and null rates are derived from each relation's actual columns, so
+# they are not listed here. Only the things that need human judgement are: which
+# columns are supposed to be unique, and which totals have to reconcile.
+#
+# Nothing here refers to an attack. The detector has to work on a corruption
+# nobody anticipated, so keying probes on known failures would defeat the point.
+
+relations:
+  # Staging is probed as well as marts. A fan-out shows up in the marts, but only
+  # the staging probes say which upstream table caused it.
+  - name: main_staging.stg_customers
+    keys: [customer_id]
+
+  - name: main_staging.stg_orders
+    keys: [order_id]
+
+  - name: main_staging.stg_order_items
+    keys: [order_item_id]
+    reconciliations:
+      gross_line_amount: "sum(line_amount)"
+
+  - name: main_marts.fct_order_items
+    keys: [order_item_id]
+    reconciliations:
+      gross_revenue_complete: "sum(line_amount) filter (where order_status = 'complete')"
+      orders_complete: "count(distinct order_id) filter (where order_status = 'complete')"
+
+  - name: main_marts.agg_revenue_by_region
+    keys: [region_code]
+    reconciliations:
+      gross_revenue: "sum(gross_revenue)"
+
+  - name: main_marts.agg_revenue_by_segment
+    keys: [segment]
+    reconciliations:
+      gross_revenue: "sum(gross_revenue)"
+
+  - name: main_marts.agg_daily_revenue
+    keys: [order_date]
+    reconciliations:
+      gross_revenue: "sum(gross_revenue)"
