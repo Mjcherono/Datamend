@@ -1,459 +1,536 @@
 {
-  "captured_at": "2026-09-18T17:05:02+00:00",
-  "git_sha": "fc0e187",
-  "note": "clean build, seed 20261002",
+  "captured_at": "2026-09-28T16:25:20+00:00",
+  "git_sha": "0d17311",
+  "note": "insurance warehouse, clean build",
   "probe_values": {
     "probes": {
-      "main_marts.agg_daily_revenue::distinct::order_date": {
-        "column": "order_date",
+      "main_marts.agg_claims_by_county::distinct::county": {
+        "column": "county",
         "expression": null,
         "kind": "distinct_count",
-        "relation": "main_marts.agg_daily_revenue"
+        "relation": "main_marts.agg_claims_by_county"
       },
-      "main_marts.agg_daily_revenue::null_rate::gross_revenue": {
-        "column": "gross_revenue",
+      "main_marts.agg_claims_by_county::null_rate::claim_cost": {
+        "column": "claim_cost",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_marts.agg_daily_revenue"
+        "relation": "main_marts.agg_claims_by_county"
       },
-      "main_marts.agg_daily_revenue::null_rate::order_date": {
-        "column": "order_date",
+      "main_marts.agg_claims_by_county::null_rate::claimants": {
+        "column": "claimants",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_marts.agg_daily_revenue"
+        "relation": "main_marts.agg_claims_by_county"
       },
-      "main_marts.agg_daily_revenue::null_rate::orders": {
-        "column": "orders",
+      "main_marts.agg_claims_by_county::null_rate::claims": {
+        "column": "claims",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_marts.agg_daily_revenue"
+        "relation": "main_marts.agg_claims_by_county"
       },
-      "main_marts.agg_daily_revenue::recon::gross_revenue": {
+      "main_marts.agg_claims_by_county::null_rate::county": {
+        "column": "county",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.agg_claims_by_county"
+      },
+      "main_marts.agg_claims_by_county::recon::claim_cost": {
         "column": null,
-        "expression": "sum(gross_revenue)",
+        "expression": "sum(claim_cost)",
         "kind": "reconciliation",
-        "relation": "main_marts.agg_daily_revenue"
+        "relation": "main_marts.agg_claims_by_county"
       },
-      "main_marts.agg_daily_revenue::row_count": {
+      "main_marts.agg_claims_by_county::row_count": {
         "column": null,
         "expression": null,
         "kind": "row_count",
-        "relation": "main_marts.agg_daily_revenue"
+        "relation": "main_marts.agg_claims_by_county"
       },
-      "main_marts.agg_revenue_by_region::distinct::region_code": {
-        "column": "region_code",
-        "expression": null,
-        "kind": "distinct_count",
-        "relation": "main_marts.agg_revenue_by_region"
-      },
-      "main_marts.agg_revenue_by_region::null_rate::gross_revenue": {
-        "column": "gross_revenue",
+      "main_marts.agg_premium_by_product::null_rate::gross_written_premium": {
+        "column": "gross_written_premium",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_region"
+        "relation": "main_marts.agg_premium_by_product"
       },
-      "main_marts.agg_revenue_by_region::null_rate::order_lines": {
-        "column": "order_lines",
+      "main_marts.agg_premium_by_product::null_rate::policies": {
+        "column": "policies",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_region"
+        "relation": "main_marts.agg_premium_by_product"
       },
-      "main_marts.agg_revenue_by_region::null_rate::orders": {
-        "column": "orders",
+      "main_marts.agg_premium_by_product::null_rate::policyholders": {
+        "column": "policyholders",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_region"
+        "relation": "main_marts.agg_premium_by_product"
       },
-      "main_marts.agg_revenue_by_region::null_rate::region_code": {
-        "column": "region_code",
+      "main_marts.agg_premium_by_product::null_rate::product_code": {
+        "column": "product_code",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_region"
+        "relation": "main_marts.agg_premium_by_product"
       },
-      "main_marts.agg_revenue_by_region::null_rate::region_name": {
-        "column": "region_name",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_region"
-      },
-      "main_marts.agg_revenue_by_region::recon::gross_revenue": {
-        "column": null,
-        "expression": "sum(gross_revenue)",
-        "kind": "reconciliation",
-        "relation": "main_marts.agg_revenue_by_region"
-      },
-      "main_marts.agg_revenue_by_region::row_count": {
-        "column": null,
-        "expression": null,
-        "kind": "row_count",
-        "relation": "main_marts.agg_revenue_by_region"
-      },
-      "main_marts.agg_revenue_by_segment::distinct::segment": {
-        "column": "segment",
-        "expression": null,
-        "kind": "distinct_count",
-        "relation": "main_marts.agg_revenue_by_segment"
-      },
-      "main_marts.agg_revenue_by_segment::null_rate::customers": {
-        "column": "customers",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_segment"
-      },
-      "main_marts.agg_revenue_by_segment::null_rate::gross_revenue": {
-        "column": "gross_revenue",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_segment"
-      },
-      "main_marts.agg_revenue_by_segment::null_rate::orders": {
-        "column": "orders",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_segment"
-      },
-      "main_marts.agg_revenue_by_segment::null_rate::segment": {
-        "column": "segment",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.agg_revenue_by_segment"
-      },
-      "main_marts.agg_revenue_by_segment::recon::gross_revenue": {
-        "column": null,
-        "expression": "sum(gross_revenue)",
-        "kind": "reconciliation",
-        "relation": "main_marts.agg_revenue_by_segment"
-      },
-      "main_marts.agg_revenue_by_segment::row_count": {
-        "column": null,
-        "expression": null,
-        "kind": "row_count",
-        "relation": "main_marts.agg_revenue_by_segment"
-      },
-      "main_marts.fct_order_items::distinct::order_item_id": {
-        "column": "order_item_id",
-        "expression": null,
-        "kind": "distinct_count",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::channel": {
-        "column": "channel",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::customer_id": {
-        "column": "customer_id",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::line_amount": {
-        "column": "line_amount",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::order_date": {
-        "column": "order_date",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::order_id": {
-        "column": "order_id",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::order_item_id": {
-        "column": "order_item_id",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::order_ref": {
-        "column": "order_ref",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::order_status": {
-        "column": "order_status",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::quantity": {
-        "column": "quantity",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::region_code": {
-        "column": "region_code",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::region_name": {
-        "column": "region_name",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::segment": {
-        "column": "segment",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::sku": {
-        "column": "sku",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::null_rate::unit_price": {
-        "column": "unit_price",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::recon::gross_revenue_complete": {
-        "column": null,
-        "expression": "sum(line_amount) filter (where order_status = 'complete')",
-        "kind": "reconciliation",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::recon::orders_complete": {
-        "column": null,
-        "expression": "count(distinct order_id) filter (where order_status = 'complete')",
-        "kind": "reconciliation",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_marts.fct_order_items::row_count": {
-        "column": null,
-        "expression": null,
-        "kind": "row_count",
-        "relation": "main_marts.fct_order_items"
-      },
-      "main_staging.stg_customers::distinct::customer_id": {
-        "column": "customer_id",
-        "expression": null,
-        "kind": "distinct_count",
-        "relation": "main_staging.stg_customers"
-      },
-      "main_staging.stg_customers::null_rate::customer_id": {
-        "column": "customer_id",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_customers"
-      },
-      "main_staging.stg_customers::null_rate::customer_ref": {
-        "column": "customer_ref",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_customers"
-      },
-      "main_staging.stg_customers::null_rate::region_code": {
-        "column": "region_code",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_customers"
-      },
-      "main_staging.stg_customers::null_rate::segment": {
-        "column": "segment",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_customers"
-      },
-      "main_staging.stg_customers::null_rate::signup_date": {
-        "column": "signup_date",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_customers"
-      },
-      "main_staging.stg_customers::null_rate::status": {
+      "main_marts.agg_premium_by_product::null_rate::status": {
         "column": "status",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_staging.stg_customers"
+        "relation": "main_marts.agg_premium_by_product"
       },
-      "main_staging.stg_customers::row_count": {
+      "main_marts.agg_premium_by_product::recon::gross_written_premium": {
         "column": null,
-        "expression": null,
-        "kind": "row_count",
-        "relation": "main_staging.stg_customers"
-      },
-      "main_staging.stg_order_items::distinct::order_item_id": {
-        "column": "order_item_id",
-        "expression": null,
-        "kind": "distinct_count",
-        "relation": "main_staging.stg_order_items"
-      },
-      "main_staging.stg_order_items::null_rate::line_amount": {
-        "column": "line_amount",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_order_items"
-      },
-      "main_staging.stg_order_items::null_rate::order_id": {
-        "column": "order_id",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_order_items"
-      },
-      "main_staging.stg_order_items::null_rate::order_item_id": {
-        "column": "order_item_id",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_order_items"
-      },
-      "main_staging.stg_order_items::null_rate::quantity": {
-        "column": "quantity",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_order_items"
-      },
-      "main_staging.stg_order_items::null_rate::sku": {
-        "column": "sku",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_order_items"
-      },
-      "main_staging.stg_order_items::null_rate::unit_price": {
-        "column": "unit_price",
-        "expression": null,
-        "kind": "null_rate",
-        "relation": "main_staging.stg_order_items"
-      },
-      "main_staging.stg_order_items::recon::gross_line_amount": {
-        "column": null,
-        "expression": "sum(line_amount)",
+        "expression": "sum(gross_written_premium)",
         "kind": "reconciliation",
-        "relation": "main_staging.stg_order_items"
+        "relation": "main_marts.agg_premium_by_product"
       },
-      "main_staging.stg_order_items::row_count": {
+      "main_marts.agg_premium_by_product::row_count": {
         "column": null,
         "expression": null,
         "kind": "row_count",
-        "relation": "main_staging.stg_order_items"
+        "relation": "main_marts.agg_premium_by_product"
       },
-      "main_staging.stg_orders::distinct::order_id": {
-        "column": "order_id",
+      "main_marts.dim_policyholder::distinct::person_id": {
+        "column": "person_id",
         "expression": null,
         "kind": "distinct_count",
-        "relation": "main_staging.stg_orders"
+        "relation": "main_marts.dim_policyholder"
       },
-      "main_staging.stg_orders::null_rate::channel": {
-        "column": "channel",
+      "main_marts.dim_policyholder::null_rate::county": {
+        "column": "county",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_staging.stg_orders"
+        "relation": "main_marts.dim_policyholder"
       },
-      "main_staging.stg_orders::null_rate::customer_id": {
-        "column": "customer_id",
+      "main_marts.dim_policyholder::null_rate::date_of_birth": {
+        "column": "date_of_birth",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_staging.stg_orders"
+        "relation": "main_marts.dim_policyholder"
       },
-      "main_staging.stg_orders::null_rate::order_date": {
-        "column": "order_date",
+      "main_marts.dim_policyholder::null_rate::eircode": {
+        "column": "eircode",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_staging.stg_orders"
+        "relation": "main_marts.dim_policyholder"
       },
-      "main_staging.stg_orders::null_rate::order_id": {
-        "column": "order_id",
+      "main_marts.dim_policyholder::null_rate::email": {
+        "column": "email",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_staging.stg_orders"
+        "relation": "main_marts.dim_policyholder"
       },
-      "main_staging.stg_orders::null_rate::order_ref": {
-        "column": "order_ref",
+      "main_marts.dim_policyholder::null_rate::full_name": {
+        "column": "full_name",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_staging.stg_orders"
+        "relation": "main_marts.dim_policyholder"
       },
-      "main_staging.stg_orders::null_rate::status": {
+      "main_marts.dim_policyholder::null_rate::person_id": {
+        "column": "person_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.dim_policyholder"
+      },
+      "main_marts.dim_policyholder::null_rate::person_ref": {
+        "column": "person_ref",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.dim_policyholder"
+      },
+      "main_marts.dim_policyholder::null_rate::phone": {
+        "column": "phone",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.dim_policyholder"
+      },
+      "main_marts.dim_policyholder::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_marts.dim_policyholder"
+      },
+      "main_marts.fct_claims::distinct::claim_id": {
+        "column": "claim_id",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::amount": {
+        "column": "amount",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::claim_date": {
+        "column": "claim_date",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::claim_id": {
+        "column": "claim_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::claim_ref": {
+        "column": "claim_ref",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::claim_type": {
+        "column": "claim_type",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::county": {
+        "column": "county",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::person_id": {
+        "column": "person_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::policy_id": {
+        "column": "policy_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::product_code": {
+        "column": "product_code",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::null_rate::status": {
         "column": "status",
         "expression": null,
         "kind": "null_rate",
-        "relation": "main_staging.stg_orders"
+        "relation": "main_marts.fct_claims"
       },
-      "main_staging.stg_orders::row_count": {
+      "main_marts.fct_claims::recon::claim_cost": {
+        "column": null,
+        "expression": "sum(amount)",
+        "kind": "reconciliation",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::recon::claimants": {
+        "column": null,
+        "expression": "count(distinct person_id)",
+        "kind": "reconciliation",
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_claims::row_count": {
         "column": null,
         "expression": null,
         "kind": "row_count",
-        "relation": "main_staging.stg_orders"
+        "relation": "main_marts.fct_claims"
+      },
+      "main_marts.fct_policies::distinct::policy_id": {
+        "column": "policy_id",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::annual_premium": {
+        "column": "annual_premium",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::county": {
+        "column": "county",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::cover_end": {
+        "column": "cover_end",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::cover_start": {
+        "column": "cover_start",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::days_since_cover_ended": {
+        "column": "days_since_cover_ended",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::person_id": {
+        "column": "person_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::policy_id": {
+        "column": "policy_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::policy_ref": {
+        "column": "policy_ref",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::product_code": {
+        "column": "product_code",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::null_rate::status": {
+        "column": "status",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::recon::gross_written_premium": {
+        "column": null,
+        "expression": "sum(annual_premium)",
+        "kind": "reconciliation",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::recon::policyholders": {
+        "column": null,
+        "expression": "count(distinct person_id)",
+        "kind": "reconciliation",
+        "relation": "main_marts.fct_policies"
+      },
+      "main_marts.fct_policies::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "main_marts.fct_policies"
+      },
+      "raw.policies::distinct::policy_id": {
+        "column": "policy_id",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "raw.policies"
+      },
+      "raw.policies::null_rate::annual_premium": {
+        "column": "annual_premium",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policies"
+      },
+      "raw.policies::null_rate::cover_end": {
+        "column": "cover_end",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policies"
+      },
+      "raw.policies::null_rate::cover_start": {
+        "column": "cover_start",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policies"
+      },
+      "raw.policies::null_rate::person_id": {
+        "column": "person_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policies"
+      },
+      "raw.policies::null_rate::policy_id": {
+        "column": "policy_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policies"
+      },
+      "raw.policies::null_rate::policy_ref": {
+        "column": "policy_ref",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policies"
+      },
+      "raw.policies::null_rate::product_code": {
+        "column": "product_code",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policies"
+      },
+      "raw.policies::null_rate::status": {
+        "column": "status",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policies"
+      },
+      "raw.policies::recon::gross_written_premium": {
+        "column": null,
+        "expression": "sum(annual_premium)",
+        "kind": "reconciliation",
+        "relation": "raw.policies"
+      },
+      "raw.policies::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "raw.policies"
+      },
+      "raw.policyholders::distinct::person_id": {
+        "column": "person_id",
+        "expression": null,
+        "kind": "distinct_count",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::address_line": {
+        "column": "address_line",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::county": {
+        "column": "county",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::date_of_birth": {
+        "column": "date_of_birth",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::eircode": {
+        "column": "eircode",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::email": {
+        "column": "email",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::first_name": {
+        "column": "first_name",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::last_name": {
+        "column": "last_name",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::person_id": {
+        "column": "person_id",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::person_ref": {
+        "column": "person_ref",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::null_rate::phone": {
+        "column": "phone",
+        "expression": null,
+        "kind": "null_rate",
+        "relation": "raw.policyholders"
+      },
+      "raw.policyholders::row_count": {
+        "column": null,
+        "expression": null,
+        "kind": "row_count",
+        "relation": "raw.policyholders"
       }
     },
     "values": {
-      "main_marts.agg_daily_revenue::distinct::order_date": 365.0,
-      "main_marts.agg_daily_revenue::null_rate::gross_revenue": 0.0,
-      "main_marts.agg_daily_revenue::null_rate::order_date": 0.0,
-      "main_marts.agg_daily_revenue::null_rate::orders": 0.0,
-      "main_marts.agg_daily_revenue::recon::gross_revenue": 12651728.55,
-      "main_marts.agg_daily_revenue::row_count": 365.0,
-      "main_marts.agg_revenue_by_region::distinct::region_code": 4.0,
-      "main_marts.agg_revenue_by_region::null_rate::gross_revenue": 0.0,
-      "main_marts.agg_revenue_by_region::null_rate::order_lines": 0.0,
-      "main_marts.agg_revenue_by_region::null_rate::orders": 0.0,
-      "main_marts.agg_revenue_by_region::null_rate::region_code": 0.0,
-      "main_marts.agg_revenue_by_region::null_rate::region_name": 0.0,
-      "main_marts.agg_revenue_by_region::recon::gross_revenue": 12651728.55,
-      "main_marts.agg_revenue_by_region::row_count": 4.0,
-      "main_marts.agg_revenue_by_segment::distinct::segment": 2.0,
-      "main_marts.agg_revenue_by_segment::null_rate::customers": 0.0,
-      "main_marts.agg_revenue_by_segment::null_rate::gross_revenue": 0.0,
-      "main_marts.agg_revenue_by_segment::null_rate::orders": 0.0,
-      "main_marts.agg_revenue_by_segment::null_rate::segment": 0.0,
-      "main_marts.agg_revenue_by_segment::recon::gross_revenue": 12651728.55,
-      "main_marts.agg_revenue_by_segment::row_count": 2.0,
-      "main_marts.fct_order_items::distinct::order_item_id": 227781.0,
-      "main_marts.fct_order_items::null_rate::channel": 0.0,
-      "main_marts.fct_order_items::null_rate::customer_id": 0.0,
-      "main_marts.fct_order_items::null_rate::line_amount": 0.0,
-      "main_marts.fct_order_items::null_rate::order_date": 0.0,
-      "main_marts.fct_order_items::null_rate::order_id": 0.0,
-      "main_marts.fct_order_items::null_rate::order_item_id": 0.0,
-      "main_marts.fct_order_items::null_rate::order_ref": 0.0,
-      "main_marts.fct_order_items::null_rate::order_status": 0.0,
-      "main_marts.fct_order_items::null_rate::quantity": 0.0,
-      "main_marts.fct_order_items::null_rate::region_code": 0.0,
-      "main_marts.fct_order_items::null_rate::region_name": 0.0,
-      "main_marts.fct_order_items::null_rate::segment": 0.0,
-      "main_marts.fct_order_items::null_rate::sku": 0.0,
-      "main_marts.fct_order_items::null_rate::unit_price": 0.0,
-      "main_marts.fct_order_items::recon::gross_revenue_complete": 12651728.55,
-      "main_marts.fct_order_items::recon::orders_complete": 97491.0,
-      "main_marts.fct_order_items::row_count": 227781.0,
-      "main_staging.stg_customers::distinct::customer_id": 20000.0,
-      "main_staging.stg_customers::null_rate::customer_id": 0.0,
-      "main_staging.stg_customers::null_rate::customer_ref": 0.0,
-      "main_staging.stg_customers::null_rate::region_code": 0.0,
-      "main_staging.stg_customers::null_rate::segment": 0.0,
-      "main_staging.stg_customers::null_rate::signup_date": 0.0,
-      "main_staging.stg_customers::null_rate::status": 0.0,
-      "main_staging.stg_customers::row_count": 20000.0,
-      "main_staging.stg_order_items::distinct::order_item_id": 227781.0,
-      "main_staging.stg_order_items::null_rate::line_amount": 0.0,
-      "main_staging.stg_order_items::null_rate::order_id": 0.0,
-      "main_staging.stg_order_items::null_rate::order_item_id": 0.0,
-      "main_staging.stg_order_items::null_rate::quantity": 0.0,
-      "main_staging.stg_order_items::null_rate::sku": 0.0,
-      "main_staging.stg_order_items::null_rate::unit_price": 0.0,
-      "main_staging.stg_order_items::recon::gross_line_amount": 16856517.0,
-      "main_staging.stg_order_items::row_count": 227781.0,
-      "main_staging.stg_orders::distinct::order_id": 130000.0,
-      "main_staging.stg_orders::null_rate::channel": 0.0,
-      "main_staging.stg_orders::null_rate::customer_id": 0.0,
-      "main_staging.stg_orders::null_rate::order_date": 0.0,
-      "main_staging.stg_orders::null_rate::order_id": 0.0,
-      "main_staging.stg_orders::null_rate::order_ref": 0.0,
-      "main_staging.stg_orders::null_rate::status": 0.0,
-      "main_staging.stg_orders::row_count": 130000.0
+      "main_marts.agg_claims_by_county::distinct::county": 11.0,
+      "main_marts.agg_claims_by_county::null_rate::claim_cost": 0.0,
+      "main_marts.agg_claims_by_county::null_rate::claimants": 0.0,
+      "main_marts.agg_claims_by_county::null_rate::claims": 0.0,
+      "main_marts.agg_claims_by_county::null_rate::county": 0.0,
+      "main_marts.agg_claims_by_county::recon::claim_cost": 20786785.65,
+      "main_marts.agg_claims_by_county::row_count": 11.0,
+      "main_marts.agg_premium_by_product::null_rate::gross_written_premium": 0.0,
+      "main_marts.agg_premium_by_product::null_rate::policies": 0.0,
+      "main_marts.agg_premium_by_product::null_rate::policyholders": 0.0,
+      "main_marts.agg_premium_by_product::null_rate::product_code": 0.0,
+      "main_marts.agg_premium_by_product::null_rate::status": 0.0,
+      "main_marts.agg_premium_by_product::recon::gross_written_premium": 27057331.8,
+      "main_marts.agg_premium_by_product::row_count": 12.0,
+      "main_marts.dim_policyholder::distinct::person_id": 25000.0,
+      "main_marts.dim_policyholder::null_rate::county": 0.0,
+      "main_marts.dim_policyholder::null_rate::date_of_birth": 0.0,
+      "main_marts.dim_policyholder::null_rate::eircode": 0.0,
+      "main_marts.dim_policyholder::null_rate::email": 0.0,
+      "main_marts.dim_policyholder::null_rate::full_name": 0.0,
+      "main_marts.dim_policyholder::null_rate::person_id": 0.0,
+      "main_marts.dim_policyholder::null_rate::person_ref": 0.0,
+      "main_marts.dim_policyholder::null_rate::phone": 0.0,
+      "main_marts.dim_policyholder::row_count": 25000.0,
+      "main_marts.fct_claims::distinct::claim_id": 12574.0,
+      "main_marts.fct_claims::null_rate::amount": 0.0,
+      "main_marts.fct_claims::null_rate::claim_date": 0.0,
+      "main_marts.fct_claims::null_rate::claim_id": 0.0,
+      "main_marts.fct_claims::null_rate::claim_ref": 0.0,
+      "main_marts.fct_claims::null_rate::claim_type": 0.0,
+      "main_marts.fct_claims::null_rate::county": 0.0,
+      "main_marts.fct_claims::null_rate::person_id": 0.0,
+      "main_marts.fct_claims::null_rate::policy_id": 0.0,
+      "main_marts.fct_claims::null_rate::product_code": 0.0,
+      "main_marts.fct_claims::null_rate::status": 0.0,
+      "main_marts.fct_claims::recon::claim_cost": 20786785.65,
+      "main_marts.fct_claims::recon::claimants": 8397.0,
+      "main_marts.fct_claims::row_count": 12574.0,
+      "main_marts.fct_policies::distinct::policy_id": 43553.0,
+      "main_marts.fct_policies::null_rate::annual_premium": 0.0,
+      "main_marts.fct_policies::null_rate::county": 0.0,
+      "main_marts.fct_policies::null_rate::cover_end": 0.0,
+      "main_marts.fct_policies::null_rate::cover_start": 0.0,
+      "main_marts.fct_policies::null_rate::days_since_cover_ended": 0.0,
+      "main_marts.fct_policies::null_rate::person_id": 0.0,
+      "main_marts.fct_policies::null_rate::policy_id": 0.0,
+      "main_marts.fct_policies::null_rate::policy_ref": 0.0,
+      "main_marts.fct_policies::null_rate::product_code": 0.0,
+      "main_marts.fct_policies::null_rate::status": 0.0,
+      "main_marts.fct_policies::recon::gross_written_premium": 27057331.8,
+      "main_marts.fct_policies::recon::policyholders": 25000.0,
+      "main_marts.fct_policies::row_count": 43553.0,
+      "raw.policies::distinct::policy_id": 43553.0,
+      "raw.policies::null_rate::annual_premium": 0.0,
+      "raw.policies::null_rate::cover_end": 0.0,
+      "raw.policies::null_rate::cover_start": 0.0,
+      "raw.policies::null_rate::person_id": 0.0,
+      "raw.policies::null_rate::policy_id": 0.0,
+      "raw.policies::null_rate::policy_ref": 0.0,
+      "raw.policies::null_rate::product_code": 0.0,
+      "raw.policies::null_rate::status": 0.0,
+      "raw.policies::recon::gross_written_premium": 27057331.8,
+      "raw.policies::row_count": 43553.0,
+      "raw.policyholders::distinct::person_id": 25000.0,
+      "raw.policyholders::null_rate::address_line": 0.0,
+      "raw.policyholders::null_rate::county": 0.0,
+      "raw.policyholders::null_rate::date_of_birth": 0.0,
+      "raw.policyholders::null_rate::eircode": 0.0,
+      "raw.policyholders::null_rate::email": 0.0,
+      "raw.policyholders::null_rate::first_name": 0.0,
+      "raw.policyholders::null_rate::last_name": 0.0,
+      "raw.policyholders::null_rate::person_id": 0.0,
+      "raw.policyholders::null_rate::person_ref": 0.0,
+      "raw.policyholders::null_rate::phone": 0.0,
+      "raw.policyholders::row_count": 25000.0
     }
   },
   "snapshot": null,

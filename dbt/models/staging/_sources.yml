@@ -2,10 +2,22 @@ version: 2
 
 sources:
   - name: raw
-    description: Landing tables loaded ahead of any transformation.
+    description: >
+      The operational copy the warehouse serves from. Erasure is applied here.
+      It is refreshed from the landing zone by the nightly source sync, which is
+      what makes an erasure that stops at this layer temporary.
     schema: raw
     tables:
-      - name: customers
-      - name: orders
-      - name: order_items
-      - name: regions
+      - name: policyholders
+      - name: policies
+      - name: claims
+
+  - name: landing
+    description: >
+      Append-only record of what arrived from the source systems. Nothing here is
+      deleted by an erasure request, which is the point.
+    schema: landing
+    tables:
+      - name: policyholders
+      - name: policies
+      - name: claims

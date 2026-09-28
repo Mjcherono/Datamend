@@ -34,3 +34,6 @@ data/*.parquet
 .vscode/
 .idea/
 .DS_Store
+
+# Runtime state
+erasure_register.json

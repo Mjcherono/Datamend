@@ -3,7 +3,7 @@ datamend:
   outputs:
     dev:
       type: duckdb
-      path: "../data/datamend.duckdb"
+      path: "../data/insurance.duckdb"
       threads: 4
       schema: main
     sandbox:
