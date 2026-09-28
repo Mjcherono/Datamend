@@ -26,14 +26,16 @@ class ErasureRecord:
     request_ref: str
     requested_at: str
     erased_at: str
-    identifiers: list[str] = field(default_factory=list)
+    strong: list[str] = field(default_factory=list)
+    weak: list[str] = field(default_factory=list)
     label: str = ""
     relations_cleared: list[str] = field(default_factory=list)
 
     def subject(self) -> Subject:
         return Subject(
             person_id=self.person_id,
-            identifiers=tuple(self.identifiers),
+            strong=tuple(self.strong),
+            weak=tuple(self.weak),
             label=self.label,
         )
 
@@ -43,7 +45,8 @@ class ErasureRecord:
             "request_ref": self.request_ref,
             "requested_at": self.requested_at,
             "erased_at": self.erased_at,
-            "identifiers": self.identifiers,
+            "strong": self.strong,
+            "weak": self.weak,
             "label": self.label,
             "relations_cleared": self.relations_cleared,
         }
@@ -88,7 +91,8 @@ class ErasureRegister:
             request_ref=request_ref,
             requested_at=requested_at or now,
             erased_at=now,
-            identifiers=list(subject.identifiers),
+            strong=list(subject.strong),
+            weak=list(subject.weak),
             label=subject.label,
             relations_cleared=relations_cleared,
         )
